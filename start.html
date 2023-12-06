@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Guessing Game</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      background: linear-gradient(to right, #c0c0c0,#f2f2f2, #ffffff); 
+      font-family: 'Helvetica';
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .tooltip {
+      position: relative;
+      cursor: pointer;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .tooltip:hover {
+      transform: translateY(-10px);
+    }
+
+    .tooltip img {
+      width: 130px;
+      height: 130px;
+      border-radius: 8px;
+    }
+
+    .tooltiptext {
+      visibility: hidden;
+      width: 100px;
+      height: 20px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      top: 100%;
+      left: 65%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    p {
+      font-size: 18px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-bottom: 10px;
+    }
+
+    #guess {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    #submit,
+    #start,
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: #0336ff;
+      color: #fff;
+      border: none;
+      border-radius:25px;
+      cursor: pointer;
+      margin-top: 10px;
+      display: inline-block;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    #submit:hover,
+    #start:hover,
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    dialog {
+      display: none;
+      border: 2px solid #2ecc71;
+      border-radius: 10px;
+      padding: 10px;
+      color: #333;
+    }
+
+    button[open] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="tooltip">
+      <img src="guess.jpg">
+      <div class="tooltiptext">This is one</div>
+    </div>
+    <div class="tooltip">
+      <img src="guess.jpg">
+      <div class="tooltiptext">This is two</div>
+    </div>
+    <div class="tooltip">
+      <img src="guess.jpg">
+      <div class="tooltiptext">This is three</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="tooltip">
+      <img src="guess.jpg">
+      <div class="tooltiptext">This is four</div>
+    </div>
+    <div class="tooltip">
+      <img src="guess.jpg">
+      <div class="tooltiptext">This is five</div>
+    </div>
+    <div class="tooltip">
+      <img src="guess.jpg">
+      <div class="tooltiptext">This is six</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="tooltip">
+      <img src="guess.jpg">
+      <div class="tooltiptext">This is seven</div>
+    </div>
+    <div class="tooltip">
+      <img src="guess.jpg">
+      <div class="tooltiptext">This is eight</div>
+    </div>
+    <div class="tooltip">
+      <img src="guess.jpg">
+      <div class="tooltiptext">This is nine</div>
+    </div>
+  </div>
+  <p>Please enter the number of the picture in text: ('one','two','three','four','five','six','seven','eight','nine')</p>
+
+  <input type="text" id="guess" />
+  <button id="submit" onclick="myFunction('guess')">Submit</button>
+  <button id="start"><a href="index.html"> New game</a></button>
+  <dialog>
+    <button autofocus>Close</button>
+    <p>You won!</p>
+    <img src="paris.jpg" id="unique" />
+  </dialog>
+  <script src="script.js"></script>
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position
