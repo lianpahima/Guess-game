@@ -13,7 +13,13 @@ Welcome to the Guessing Game repository! This game is designed to challenge your
 7. In each level, you have nine chances to find the hidden picture.
 
 ## Getting Started
-   
+1. Clone this repository:
+   ```bash
+ https://github.com/lianpahima/Guess-game/tree/main
+ 2. Open the project in your preferred web browser.
+ 
+Start guessing and have fun!
+  
 Game Features
 
 Interactive gameplay with a simple user interface.
